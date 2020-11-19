@@ -6,7 +6,7 @@
 int main(int argc, char *argv[]) {
 	
 	FILE* fp;
-	char c;
+	char str[100];
 	
 	fp = fopen("sample.txt", "r");
 	if(fp == NULL)
@@ -14,8 +14,8 @@ int main(int argc, char *argv[]) {
 		return -1;
 	}
 	
-	while((c = fgetc(fp)) != EOF) {
-		printf("%c",c);
+	while((fgets(str, 100, fp)) != NULL) {
+		printf("%s",str);
 	}
 	
 	fclose(fp);
