@@ -1,23 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
 	
-	int i = 0;
-	char str[4];
+	char src[] = "The worst things to eat before you sleep";
+	char dst[100];
+	char str[30] = "happy C programming";
 	
-	str[0] = 'a';
-	str[1] = 'b';
-	str[2] = 'c';
-	str[3] = '\0';
+	strcpy(dst, src);
 	
-	while(str[i]!='\0')
-	{
-		printf("%c", str[i]);
-		i++;
-	}
+	printf("copied string : %s\n", dst);
+	
+	printf("length of \"%s\" : %i", str, strlen(str));
 	
 	return 0;
 }
